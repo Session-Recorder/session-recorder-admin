@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Breadcrumb, Button, DatePicker, Menu, Space } from "antd";
+import Layout, { Content, Footer, Header } from "antd/lib/layout/layout";
+import Sider from "antd/lib/layout/Sider";
+import SubMenu from "antd/lib/menu/SubMenu";
+import React from "react";
+import Icon, {
+  UserOutlined,
+  LaptopOutlined,
+  NotificationOutlined,
+  LogoutOutlined,
+  LoginOutlined,
+} from "@ant-design/icons";
+import CLayout from "components/CLayout";
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import WebsitesPage from "pages/WebsitesPage";
+import WebsiteOverviewPage from "pages/WebsiteOverviewPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Switch>
+          <Route path="/websites" exact>
+            <WebsitesPage />
+          </Route>
+          <Route path="/websites/:id">
+            <WebsiteOverviewPage />
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
