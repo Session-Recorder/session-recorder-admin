@@ -1,4 +1,4 @@
-# Session Recorder Project, React Frontent
+# Session Recorder Project, React Frontend
 
 ## Used Stacks
 
