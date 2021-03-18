@@ -146,7 +146,7 @@ function WebsitePage() {
 							const sure = window.confirm("정말로 삭제하시겠습니까?");
 							if (sure) {
 								console.log(selectedRowKeys);
-								AxiosClient.post(`/api/delete-sessions`, {
+								AxiosClient.post(`/api/sessions/delete-many`, {
 									sessionIdList: selectedRowKeys,
 								})
 									.then(() => {
